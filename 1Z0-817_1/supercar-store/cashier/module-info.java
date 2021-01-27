@@ -3,6 +3,7 @@
  * All rights reserved
  */
 
-module cardealer.cashregister {
-	exports cardealer.cashregister;
+module cardealer.cashier {
+	exports cardealer.cashier.external;
+	requires cardealer.cashregister;
 }

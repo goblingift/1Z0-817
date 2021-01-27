@@ -3,6 +3,6 @@
  * All rights reserved
  */
 
-module cardealer.cashregister {
-	exports cardealer.cashregister;
+module cardealer.salesman {
+	requires cardealer.cashier;
 }
