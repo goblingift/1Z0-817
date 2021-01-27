@@ -4,6 +4,6 @@
  */
 
 module cardealer.cashier {
-	exports cardealer.cashier.external;
-	requires cardealer.cashregister;
+	exports cardealer.cashier.external to cardealer.salesman;
+	requires transitive cardealer.cashregister;
 }
