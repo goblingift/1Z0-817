@@ -1,0 +1,3 @@
+module carserviceconsumer {
+	requires carservicelocator;
+}
