@@ -13,4 +13,4 @@ public class CarWash implements Washable {
         System.out.println("Car entered the car wash!");
         Washable.publicWash();
     }
-}
+    }
