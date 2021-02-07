@@ -21,6 +21,16 @@ public class FunctionExample implements Function<String, Integer>{
         FunctionExample functionExample = new FunctionExample();
         Function<String, Integer> function = s -> functionExample.apply(s);
         System.out.println(function.apply("908"));
+        
+        // usage of compose() & andThen()
+        Function<String, String> firstFunction = s -> s.toLowerCase().concat("_low_");
+        Function<String, String> secondFunction = s -> s.toUpperCase().concat("_UP_");
+        
+        Function<String, String> composedFunction = secondFunction.compose(firstFunction);
+        System.out.println(composedFunction.apply("start"));
+        
+        Function<String, String> andThenFunction = firstFunction.andThen(secondFunction);
+        System.out.println(andThenFunction.apply("start2"));
     }
     
 }

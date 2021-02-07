@@ -12,6 +12,13 @@ import java.util.function.Consumer;
  */
 public class ConsumerExample implements Consumer<String> {
     
+    class AnotherConsumerExample implements Consumer<String> {
+        @Override
+        public void accept(String t) {
+            System.out.println("*drink drink drink*");
+        }
+    }
+    
     @Override
     public void accept(String t) {
         System.out.println("nom nom nom");
@@ -19,7 +26,9 @@ public class ConsumerExample implements Consumer<String> {
     
     public static void execute() {
         ConsumerExample consumerExample = new ConsumerExample();
+        AnotherConsumerExample anotherConsumerExample = consumerExample.new AnotherConsumerExample();
         Consumer<String> consumer = s -> consumerExample.accept(s);
-        consumer.accept("Pizza");
+        Consumer<String> superConsumer = consumer.andThen(anotherConsumerExample);
+        superConsumer.accept("Pizza");
     }
 }

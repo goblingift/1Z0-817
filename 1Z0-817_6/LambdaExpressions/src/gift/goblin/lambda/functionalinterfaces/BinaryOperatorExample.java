@@ -22,5 +22,4 @@ public class BinaryOperatorExample implements BinaryOperator<String>{
         BinaryOperator<String> binaryOperator = (s1, s2) -> binaryOperatorExample.apply(s1, s2);
         System.out.println(binaryOperator.apply("FiRStText", "SeCOndText"));
     }
-    
 }
