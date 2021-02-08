@@ -13,6 +13,12 @@ import gift.goblin.lambda.functionalinterfaces.FunctionExample;
 import gift.goblin.lambda.functionalinterfaces.PredicateExample;
 import gift.goblin.lambda.functionalinterfaces.SupplierExample;
 import gift.goblin.lambda.functionalinterfaces.UnaryOperatorExample;
+import gift.goblin.lambda.functionalinterfaces.primitives.PrimitiveBinaryOperator;
+import gift.goblin.lambda.functionalinterfaces.primitives.PrimitiveConsumer;
+import gift.goblin.lambda.functionalinterfaces.primitives.PrimitiveFunction;
+import gift.goblin.lambda.functionalinterfaces.primitives.PrimitivePredicate;
+import gift.goblin.lambda.functionalinterfaces.primitives.PrimitiveSupplier;
+import gift.goblin.lambda.functionalinterfaces.primitives.PrimitiveUnaryOperator;
 import gift.goblin.lambda.methodreferences.AdvancedInstanceMethodReference;
 import gift.goblin.lambda.methodreferences.InstanceMethodReference;
 import gift.goblin.lambda.methodreferences.StaticMethodReferences;
@@ -47,6 +53,14 @@ public class MainClass {
         BiFunctionExample.execute();
         UnaryOperatorExample.execute();
         BinaryOperatorExample.execute();
+        
+        // primitive functional interfaces
+        PrimitiveSupplier.execute();
+        PrimitiveConsumer.execute();
+        PrimitivePredicate.execute();
+        PrimitiveFunction.execute();
+        PrimitiveUnaryOperator.execute();
+        PrimitiveBinaryOperator.execute();
     }
     
 }
