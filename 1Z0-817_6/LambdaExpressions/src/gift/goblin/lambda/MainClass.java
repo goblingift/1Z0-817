@@ -22,6 +22,7 @@ import gift.goblin.lambda.functionalinterfaces.primitives.PrimitiveUnaryOperator
 import gift.goblin.lambda.methodreferences.AdvancedInstanceMethodReference;
 import gift.goblin.lambda.methodreferences.InstanceMethodReference;
 import gift.goblin.lambda.methodreferences.StaticMethodReferences;
+import gift.goblin.lambda.streams.StreamCreation;
 
 /**
  *
@@ -61,6 +62,10 @@ public class MainClass {
         PrimitiveFunction.execute();
         PrimitiveUnaryOperator.execute();
         PrimitiveBinaryOperator.execute();
+        
+        // defined stream-creation
+        StreamCreation.execute();
+        
     }
     
 }
