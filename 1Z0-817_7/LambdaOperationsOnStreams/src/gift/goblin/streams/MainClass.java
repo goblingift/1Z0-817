@@ -7,6 +7,7 @@ package gift.goblin.streams;
 import gift.goblin.streams.collections.SortedCollectionsExample;
 import gift.goblin.streams.collectors.CollectorsExample;
 import gift.goblin.streams.collectors.GroupingByExample;
+import gift.goblin.streams.collectors.ReduceExample;
 import gift.goblin.streams.optional.OptionalExample;
 import gift.goblin.streams.terminate.TerminationExample;
 
@@ -26,6 +27,7 @@ public class MainClass {
         SortedCollectionsExample.execute();
         CollectorsExample.execute();
         GroupingByExample.execute();
+        ReduceExample.execute();
     }
     
 }
