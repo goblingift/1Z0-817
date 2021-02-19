@@ -4,7 +4,12 @@
  */
 package gift.goblin.streams.collectors;
 
+import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
+import java.util.OptionalDouble;
+import java.util.function.BinaryOperator;
+import java.util.function.DoubleBinaryOperator;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -29,6 +34,17 @@ public class ReduceExample {
                 (count1, count2) -> count1 + count2);
         System.out.println(characterCount);
 
+        
+        Stream<Book> bookStream = Stream.of(new Book(12.99, "Dramas of B.D."), new Book(9.99, "Western Stories"));
+        BinaryOperator<Double> bop = (d1, d2) -> d1 + d2;
+        Double allBookPrices = bookStream.map(b -> b.getPrice()).reduce(bop).get();
+        System.out.println(allBookPrices);
+        
+        Stream<Book> bookStream2 = Stream.of(new Book(12.99, "Dramas of B.D."), new Book(9.99, "Western Stories"));
+        DoubleBinaryOperator dbo = (d1, d2) -> d1 + d2;
+        OptionalDouble reduce = bookStream2.mapToDouble(b -> b.getPrice()).reduce(dbo);
+        
+        
     }
-
+    
 }

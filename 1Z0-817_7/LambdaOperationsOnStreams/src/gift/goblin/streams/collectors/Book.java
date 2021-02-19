@@ -12,12 +12,34 @@ import java.time.LocalDate;
  */
 public class Book {
     
+    private double price;
     private String name;
     private LocalDate publishedAt;
 
     public Book(String name, LocalDate publishedAt) {
         this.name = name;
         this.publishedAt = publishedAt;
+    }
+
+    public Book(double price, String name) {
+        this.price = price;
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getTitle() {
