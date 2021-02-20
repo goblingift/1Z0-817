@@ -6,9 +6,8 @@ package gift.goblin.interfaces;
 
 import gift.goblin.interfaces.defaultmethods.SafeLock;
 import gift.goblin.interfaces.functionalinterfaces.ReturnAnythingInterface;
-import gift.goblin.interfaces.functionalinterfaces.SimpleFunctionalInterface;
 import gift.goblin.interfaces.staticmethods.CarWash;
-import java.util.function.Predicate;
+import gift.goblin.interfaces.staticmethods.Inheritance.InterfaceInheritanceDefaultMethodExample;
 
 /**
  *
@@ -34,6 +33,9 @@ public class MainClass {
         String a = mainClass.returner(impl, "AaAaa");
         String b = mainClass.returner((String s) -> s.toLowerCase(), "BbBbb");
         System.out.println(a + b);
+        
+        
+        InterfaceInheritanceDefaultMethodExample.execute();
         
     }
     
