@@ -40,6 +40,7 @@ public class CollectorsExample {
         System.out.println(max);
         
         testExamples();
+        minMaxComparator();
     }
     
     private static void testExamples() {
@@ -63,5 +64,30 @@ public class CollectorsExample {
         System.out.println(flag);
     }
     
+    private static void minMaxComparator() {
+        System.out.println("comparator stuff");
+        
+        List<Integer> ls = Arrays.asList(8, 457, 68, 199);
+        Integer maxResult = ls.stream().max((i1, i2) -> Integer.compare(i1, i2)).get();
+        System.out.println(maxResult);
+        
+        
+        List<Integer> ls2 = Arrays.asList(8, 457, 68, 199);
+        System.out.println(ls2.stream().max(Comparator.comparing(i -> i)).get());
+        
+        List<Integer> ls3 = Arrays.asList(8, 457, 68, 199);
+        System.out.println(ls3.stream().max(Comparator.comparing(i -> i)).get());
+        
+    }
+    
 
+}
+
+class Car {
+    public int price;
+
+    public Car(int price) {
+        this.price = price;
+    }
+    
 }
