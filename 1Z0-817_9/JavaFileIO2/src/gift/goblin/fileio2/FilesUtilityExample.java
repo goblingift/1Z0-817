@@ -7,6 +7,7 @@ package gift.goblin.fileio2;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,6 +24,7 @@ public class FilesUtilityExample {
         copyFilesExample();
         strangeCopyFilesExample();
         moveFilesAndDirsExample();
+        deleteFilesAndFoldersExample();
     }
     
     private static void exists() {
@@ -103,6 +105,29 @@ public class FilesUtilityExample {
         } catch (IOException ex) {
             System.out.println("Exception while moving file: " + ex.getMessage());
         }
+    }
+
+    private static void deleteFilesAndFoldersExample() {
+        
+        Path originalFile = Path.of("C:", "temp", "java", "php.ini");
+        Path targetFile = Path.of("C:", "temp", "java", "php_copied.ini");
+        
+        try {
+            Files.copy(originalFile, targetFile, StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException ex) {
+            Logger.getLogger(FilesUtilityExample.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        Path file = Path.of("C://temp/java/php_copied.ini");
+        try {
+            Files.delete(file);
+            boolean deleteIfExists = Files.deleteIfExists(file);
+            System.out.println("Result of deletion: " + deleteIfExists);
+        } catch (IOException ex) {
+            System.out.println("IOException thrown!");
+        }
+        
         
     }
     

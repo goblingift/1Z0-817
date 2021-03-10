@@ -19,6 +19,7 @@ public class MainClass {
         ResolvePathsExample.execute();
         RelativizePathsExample.execute();
         FilesUtilityExample.execute();
+        FilesAndStreams.execute();
     }
     
 }
